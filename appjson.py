@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, flash, redirect
 import mysql.connector
+import os
 
 # Configuración de la base de datos
 database = mysql.connector.connect(
@@ -145,4 +146,5 @@ def index():
     return jsonify({"message": "Bienvenido a la API del Mercado2"}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4000)
+    port = int(os.environ.get("PORT", 4000))
+    app.run(host="0.0.0.0", port=port, debug=True)
