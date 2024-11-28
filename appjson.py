@@ -111,5 +111,5 @@ def index():
     return jsonify({"message": "Bienvenido a la API del Mercado Agrícola"}), 200
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 3000))  # Cambié el puerto predeterminado a 3000
+    port = int(os.environ.get("PORT", 1000))  # Cambié el puerto predeterminado a 3000
     app.run(host="0.0.0.0", port=port, debug=True)
